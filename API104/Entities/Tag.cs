@@ -1,8 +1,10 @@
-﻿namespace API104.Entities
+﻿using API104.Entities.Base;
+
+namespace API104.Entities
 {
-    public class Tag
+    public class Tag:BaseEntity
     {
-        public int Id { get; set; }
+      
         public string Name { get; set; }
     }
 }

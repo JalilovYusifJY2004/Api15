@@ -1,6 +1,8 @@
 using API104.DAL;
 using API104.Repositories.Implementations;
 using API104.Repositories.Interface;
+using API104.Services.Implementations;
+using API104.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace API104
@@ -21,8 +23,8 @@ namespace API104
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
             });
-            builder.Services.AddScoped<IRepository, Repository>();
-
+            builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+            builder.Services.AddScoped<ICategoryService, CategoryService >();
             var app = builder.Build();
 
 
